@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: spring-cloud-consumer-hystrix
+server:
+  port: 9009
+eureka:
+  client:
+    service-url:
+      defaultZone: http://47.104.189.239:8000/eureka/,http://47.104.189.239:8001/eureka/,http://47.104.189.239:8002/eureka/
+  instance:
+    lease-expiration-duration-in-seconds: 2
+    lease-renewal-interval-in-seconds: 1
+    preferIpAddress: true
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+
+username: root
+password: root
+openurl: http://127.0.0.1:8086
+database: my_db
+measurement: aaaa
+swagger.enable: true

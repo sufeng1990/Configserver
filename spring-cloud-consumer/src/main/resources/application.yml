@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: spring-cloud-consumer
+server:
+  port: 9001
+eureka:
+  client:
+    service-url:
+      defaultZone: http://47.104.189.239:8000/eureka/,http://47.104.189.239:8001/eureka/,http://47.104.189.239:8002/eureka/
+  instance:
+    lease-expiration-duration-in-seconds: 2
+    lease-renewal-interval-in-seconds: 1
+    preferIpAddress: true
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+
+
